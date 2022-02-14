@@ -1,0 +1,45 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Kontak</h1>
+<%= link_to "New kontak", new_kontak_path , class:"btn btn-primary"%>
+<br></br>
+<table class="table table-striped table-bordered table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">nama</th>
+      <th scope="col">email</th>
+      <th scope="col">telepon</th>
+      <th scope="col">twitter</th>
+      <th scope="col">facebook</th>
+      <th scope="col">instagram</th>
+      <th colspan="3">aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @kontaks.each do |kontak| %>
+      <td> <%= kontak.nama %> </td>
+      <td> <%= kontak.email %> </td>
+      <td> <%= kontak.telepon %> </td>
+      <td> <%= kontak.twitter %> </td>
+      <td> <%= kontak.facebook %> </td>
+      <td> <%= kontak.instagram %> </td>
+      <td> <%= link_to "show" , kontak %> </td>
+      <td> <%= link_to "edit", edit_kontak_path(kontak) %> </td>
+      <td> <%= link_to "delete", kontak ,method: :delete,data: {confirm: 'Are you sure ?'} %> </td>
+  
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!--<div id="kontaks">
+  <% @kontaks.each do |kontak| %>
+    <%= render kontak %>
+    <p>
+      <%= link_to "Show this kontak", kontak %>
+    </p>
+  <% end %>
+</div>-->
+
+
